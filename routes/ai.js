@@ -24,7 +24,7 @@ router.post("/ask-ai", async (req, res) => {
 
     //  Using the current stable flash model
     const model = genAI.getGenerativeModel({
-      model: "gemini-2.5-flash",
+      model: process.env.GEMINI_MODEL_NAME,
     });
 
     const result = await model.generateContent(prompt);
